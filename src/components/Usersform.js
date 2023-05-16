@@ -16,11 +16,13 @@ const Usersform = () => {
 useEffect(() => {
   
   const userSingUpInfo=JSON.parse(localStorage.getItem("UserInformation"));
+  if(userSingUpInfo !==null){
   console.log("Check this", userSingUpInfo);
   setName(userSingUpInfo.name);
   setEmail(userSingUpInfo.email);
   setPhoneNumber(userSingUpInfo.phonenumber)
   setPassword(userSingUpInfo.password)
+  }
 }, [showForm]);
   const handleName=(e)=>{
   const name=e.target.value;
